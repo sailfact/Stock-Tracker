@@ -1,0 +1,13 @@
+services:
+  stock-tracker:
+    image: stock-tracker:latest
+    container_name: stock-tracker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./data:/app/data
+    networks:
+      - stock-network
